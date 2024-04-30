@@ -38,13 +38,23 @@
     </header>
   </div>
 
-  <section class="intro-sobre container">
-    <div class="intro-sobre-conteudo">
-      <span>Sobre Nós</span>
-      <h2>Trazendo felicidades em formato de goles <span>magníficos</span></h2>
-      <p>Na Vinheria Agnello, cada gole magnífico é um convite à felicidade. Nossa vinícola é um espaço dedicado à celebração dos bons momentos, onde cada garrafa conta uma história de tradição e excelência. Das vinhas aos nossos enólogos, cada etapa é cuidadosamente executada para garantir uma experiência única em cada taça. Aqui, a felicidade é mais do que uma promessa; é uma realidade que se revela em cada aroma, em cada sabor, aquecendo corações e inspirando sorrisos.</p>
+  <section class="vinho-detalhado container">
+    <img src="./img/vinho.jpg" alt="Vinho">
+    <div>
+      <h2>Carbenet Sauvignon</h2>
+      <p class="estoque">10 em estoque</p>
+      <span>R$ 320,00</span>
+      <div class="inputs">
+        <input type="number" id="quantidade-vinho" oninput="calcularCompra()">
+        <button class="add-carrinho" onclick="adicionarCarrinho()">Adicionar no Carrinho</button>
+        <p id="resultado-quantidade"></p>
+      </div>
+      <input class="cupom" type="text" placeholder="CUPOM" id="cupom">
+      <button class="validar-cupom" onclick="validarCupom()">Validar Cupom</button>
+      <p id="resultado-cupom"></p>
+      <h3>Descrição</h3>
+      <p class="descricao">O Cabernet Sauvignon é um vinho tinto clássico, originário de Bordeaux, conhecido por sua cor vermelha profunda e seus aromas de frutas escuras e especiarias. Encorpado e robusto, é perfeito para acompanhar carne vermelha grelhada ou queijos maturados. Um verdadeiro ícone da viticultura, celebrado por sua complexidade e elegância.</p>
     </div>
-    <img src="./img/uva-mao.jpg" alt="">
   </section>
 
   <footer class="footer-bg">

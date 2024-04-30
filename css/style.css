@@ -4,6 +4,8 @@
   --cor-cinza: #bbb;
   --cor-preta-clara: #2B2B2B;
   --cor-preta: #111;
+  --cor-azul: #369EEA;
+  --cor-azul-escuro: #1273B9;
 }
 
 * {
@@ -74,7 +76,7 @@ html {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  height: 100px;
+  min-height: 100px;
   padding: 10px 20px;
   .barra-pesquisa {
     width: 600px;
@@ -247,7 +249,7 @@ html {
 /****************************************************************** SOBRE NÓS ******************************************************************/
 
 .intro-sobre {
-  height: calc(100vh - 160px - 100px - 44px );
+  height: calc(100vh - 160px - 105px - 44px );
   display: flex;
   align-items: center;
   gap: 60px;
@@ -277,4 +279,208 @@ html {
     letter-spacing: .8px;
     margin-top: 8px;
   }
+}
+
+/******************************************************************** LOGIN ********************************************************************/
+
+.login{
+  height: calc(100vh - 160px - 105px - 44px );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  border: 1px solid var(--cor-vinho);
+  border-radius: 4px;
+  padding: 60px 20px;
+  width: 20%;
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+  }
+  div label {
+    margin-bottom: 4px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--cor-preta);
+  }
+  div input {
+    font-size: 1rem;
+    padding: 8px;
+    border: 1px solid var(--cor-cinza);
+    border-radius: 4px;
+  }
+  button {
+    width: 100%;
+    border: none;
+    padding: 8px;
+    margin-top: 4px;
+    background: var(--cor-azul);
+    color: var(--cor-branca);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  button:hover {
+    background: var(--cor-azul-escuro);
+    cursor: pointer;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Merriweather', serif;
+    color: var(--cor-vinho);
+  }
+  p {
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .login-valido {
+    color: green;
+  }
+  .login-invalido {
+    color: red;
+  }
+}
+
+/**************************************************************** VINHO DETALHADO ****************************************************************/
+
+.vinho-detalhado {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+  padding: 60px 20px;
+  height: calc(100vh - 160px - 105px - 44px );
+  img {
+    border-radius: 4px;
+  }
+  h2 {
+    font-size: 2rem;
+    color: var(--cor-preta);
+  }
+  h3 {
+    font-size: 1.5rem;
+    color: var(--cor-preta-clara);
+    margin-bottom: 12px;
+  }
+  .estoque {
+    font-size: 1.25rem;
+    margin: 12px 0px;
+  }
+  .descricao {
+    font-size: 1.25rem;
+  }
+  span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cor-vinho);
+  }
+  .inputs {
+    margin: 20px 0px;
+  }
+  div input {
+    width: 80px;
+    padding: 8px 12px;
+    font: 1rem;
+    border-radius: 0px;
+    border: 1px solid var(--cor-preta-clara);
+    
+  }
+  div .add-carrinho {
+    padding: 8px 12px;
+    border: none;
+    text-transform: uppercase;
+    background: var(--cor-vinho);
+    color: var(--cor-branca);
+    font-size: 1rem;
+    transition: .3s;
+    
+  }
+  div .add-carrinho:hover {
+    background: var(--cor-preta);
+    cursor: pointer;
+  }
+  .cupom {
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+  }
+  .cupom:focus {
+    border: 1px solid #000;
+  }
+  .cupom-valido {
+    color: green;
+  }
+  .cupom-invalido {
+    color: red;
+  }
+  .validar-cupom {
+    border: none;
+    border-radius: 4px;
+    background: var(--cor-branca);
+    padding: 8px 12px;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .3);
+    transition: .3s;
+  }
+  .validar-cupom:hover {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .6);
+    cursor: pointer;
+  }
+  #resultado-quantidade {
+    margin-top: 10px;
+    font-weight: 600;
+  }
+}
+
+/******************************************************************** CONTATO ********************************************************************/
+.section-formulario{
+  padding: 60px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.section-formulario{
+  > span {
+    text-transform: uppercase;
+    color: var(--cor-cinza);
+    letter-spacing: 2px;
+    font-size: 30px;
+  }
+}
+.formulario-mensagem{
+  border: 2px solid var(--cor-vinho);
+  padding: 30px 75px 30px 75px;
+  border-radius: 7px;
+}
+.formulario-mensagem input{
+  padding: 10px 20px;
+}
+.formulario-mensagem label{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+.formulario-mensagem button{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin-top: 15px;
+  border: 2px solid var(--cor-vinho);
+  background-color: transparent;
+  border-radius: 7px;
+  transition: .3s;
+}
+.formulario-mensagem button:hover{
+  background-color: var(--cor-vinho);
+  border: 2px solid var(--cor-branca);
+  color: var(--cor-branca);
+}
+.item-form{
+  display: flex;
+  margin-top: 15px;
 }
