@@ -494,11 +494,19 @@ html {
 
 /******************************************************************** SUGESTAO   ********************************************************************/
 
+.sugestao-cards {
+    /* height: calc(100vh - 160px - 105px - 44px - 20px); */
+    height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .sugestao-container{
   display: flex;
   margin-top: 20px;
   justify-content: space-evenly;
-  height: calc(100vh - 160px - 105px - 44px - 20px);
   gap: 30px;
 }
 
