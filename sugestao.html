@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body id="vinho-detalhado">
+<body id="sugestao">
 
   <section class="top-bar-bg">
     <div class="top-bar container">
@@ -39,22 +39,37 @@
     </header>
   </div>
 
-  <section class="vinho-detalhado container">
-    <img src="./img/vinho.jpg" alt="Vinho">
-    <div>
-      <h2>Carbenet Sauvignon</h2>
-      <p class="estoque">10 em estoque</p>
-      <span>R$ 320,00</span>
-      <div class="inputs">
-        <input type="number" id="quantidade-vinho" oninput="calcularCompra()">
-        <button class="add-carrinho" onclick="adicionarCarrinho()">Adicionar no Carrinho</button>
-        <p id="resultado-quantidade"></p>
-      </div>
-      <input class="cupom" type="text" placeholder="CUPOM" id="cupom">
-      <button class="validar-cupom" onclick="validarCupom()">Validar Cupom</button>
-      <p id="resultado-cupom"></p>
-      <h3>Descrição</h3>
-      <p class="descricao">O Cabernet Sauvignon é um vinho tinto clássico, originário de Bordeaux, conhecido por sua cor vermelha profunda e seus aromas de frutas escuras e especiarias. Encorpado e robusto, é perfeito para acompanhar carne vermelha grelhada ou queijos maturados. Um verdadeiro ícone da viticultura, celebrado por sua complexidade e elegância.</p>
+  <section class="sugestao-cards">
+    <span>Sugestões</span>
+    <div class="sugestao-container">
+
+        <!-- 1o. Card-Segestao -->
+        <div class="sugestao-card-item">
+            <img src="./img/vinho.jpg" alt="Foto Carbenet Sauvignon">
+            <div >
+                <h3>Carbenet Sauvignon</h3>
+                <button class="button-padrao btnSugestao">Ver mais</button>
+              </div>
+            <p>Os aromas e sabores frutados do Cabernet Sauvignon tornam-no numa excelente combinação com qualquer salada com frutos vermelhos ou com um molho à base de fruta. Saladas de outono com frutas secas funcionam ou, como você provavelmente pode imaginar, uma salada de bife e queijo azul é excelente com Cabernet Sauvignon.</p>
+        </div>
+        <!-- 2o. Card-Segestao -->
+        <div class="sugestao-card-item">
+            <img src="./img/vinho.jpg" alt="Foto Carbenet Sauvignon">
+            <div>
+                <h3>Carbenet Sauvignon</h3>
+                <button class="button-padrao btnSugestao">Ver mais</button>
+              </div>
+              <p>Os aromas e sabores frutados do Cabernet Sauvignon tornam-no numa excelente combinação com qualquer salada com frutos vermelhos ou com um molho à base de fruta. Saladas de outono com frutas secas funcionam ou, como você provavelmente pode imaginar, uma salada de bife e queijo azul é excelente com Cabernet Sauvignon.</p>
+        </div>
+        <!-- 3o. Card-Segestao -->
+        <div class="sugestao-card-item">
+            <img src="./img/vinho.jpg" alt="Foto Carbenet Sauvignon">
+            <div>
+                <h3>Carbenet Sauvignon</h3>
+                <button class="button-padrao btnSugestao">Ver mais</button>
+              </div>
+              <p>Os aromas e sabores frutados do Cabernet Sauvignon tornam-no numa excelente combinação com qualquer salada com frutos vermelhos ou com um molho à base de fruta. Saladas de outono com frutas secas funcionam ou, como você provavelmente pode imaginar, uma salada de bife e queijo azul é excelente com Cabernet Sauvignon.</p>
+        </div>
     </div>
   </section>
 

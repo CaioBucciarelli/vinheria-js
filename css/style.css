@@ -105,7 +105,10 @@ html {
   }
 }
 
-#sobre header {
+#sobre header,
+#login header,
+#sugestao header,
+#vinho-detalhado header {
   nav ul li a:hover {
     color: #ccc;
   }
@@ -249,7 +252,8 @@ html {
 /****************************************************************** SOBRE NÓS ******************************************************************/
 
 .intro-sobre {
-  height: calc(100vh - 160px - 105px - 44px );
+  /* height: calc(100vh - 160px - 105px - 44px ); */
+  height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   gap: 60px;
@@ -284,7 +288,8 @@ html {
 /******************************************************************** LOGIN ********************************************************************/
 
 .login{
-  height: calc(100vh - 160px - 105px - 44px );
+  /* height: calc(100vh - 160px - 105px - 44px ); */
+  height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -353,7 +358,8 @@ html {
   align-items: end;
   gap: 20px;
   padding: 60px 20px;
-  height: calc(100vh - 160px - 105px - 44px );
+  /* height: calc(100vh - 160px - 105px - 44px );  */
+  height: calc(100vh - 100px);
   img {
     border-radius: 4px;
   }
@@ -465,7 +471,7 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
-.formulario-mensagem button{
+.button-padrao{
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   padding: 10px 30px;
@@ -474,8 +480,9 @@ html {
   background-color: transparent;
   border-radius: 7px;
   transition: .3s;
+  cursor: pointer;
 }
-.formulario-mensagem button:hover{
+.button-padrao:hover{
   background-color: var(--cor-vinho);
   border: 2px solid var(--cor-branca);
   color: var(--cor-branca);
@@ -483,4 +490,97 @@ html {
 .item-form{
   display: flex;
   margin-top: 15px;
+}
+
+/******************************************************************** SUGESTAO   ********************************************************************/
+
+.sugestao-container{
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  height: calc(100vh - 160px - 105px - 44px - 20px);
+  gap: 30px;
+}
+
+.sugestao-cards span{
+    text-transform: uppercase;
+    color: var(--cor-cinza);
+    letter-spacing: 2px;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    padding: 30px 0px 5px 0px;
+    
+    
+}
+
+.sugestao-card-item{
+  box-shadow: 1px 1px 4px #999;
+  border-radius: 4px;
+  padding: 1em;
+  height: 350px;
+  width: min-content;
+  transition: scale .3s;
+  transition: .5s;
+  overflow: hidden;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  
+  img{
+    width: 380px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  p {
+    margin-top: 60px
+  }
+}
+
+.sugestao-card-item:hover{
+  scale: 1.1;
+}
+
+.sugestao-card-item-overflow {
+  height: 550px;
+}
+
+/******************************************************************** VERIFICACAO IDADE  ********************************************************************/
+
+.age-container{
+  background: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,.2)), url("../img/intro-img.jpg") center;
+}
+
+.grid{
+  display: grid;
+  place-items: center; /* Isso centraliza os itens horizontal e verticalmente */
+  height: 100vh; /* Isso faz com que o contêiner ocupe toda a altura da janela */
+}
+
+.glass-card{
+  width: 40%;
+  height: 60%;
+
+  backdrop-filter: blur(16px) saturate(189%);
+  -webkit-backdrop-filter: blur(16px) saturate(189%);
+  background-color: rgba(40, 36, 17, 0.63);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.glass-card h2{
+  font-size: 4vmin;
+  color: var(--color-pink);
 }

@@ -1,14 +1,3 @@
-/************************************************************ VERIFICAÇÃO DE IDADE ************************************************************/
-
-var idade = prompt("Qual é a sua idade?");
-
-if (idade >= 18) {
-    alert("Bem-vindo à loja de vinhos!");
-} else {
-    window.location.href = "https://www.google.com";
-}
-
-
 /************************************************************* VERIFICAÇÃO LOGIN *************************************************************/
 
 var resultadoLogin = document.getElementById('resultado-login');
@@ -27,23 +16,6 @@ function validarLogin(){
   }
 }
 
-/************************************************************* VERIFICAÇÃO CUPON *************************************************************/
-
-var resultadoCupom = document.getElementById('resultado-cupom');
-
-function validarCupom() {
-  var cupom = document.getElementById('cupom').value;
-  console.log(cupom);
-  if (cupom == 'FIAP1234') {
-    resultadoCupom.innerText = 'Cupom Válido'
-    resultadoCupom.className = "cupom-valido"
-  }
-  else {
-    resultadoCupom.innerText = 'Cupom Inválido'
-    resultadoCupom.className = "cupom-invalido"
-  }
-}
-
 /************************************************************* ADICIONAR AO CARRINHO *************************************************************/
 
 function adicionarCarrinho() {
@@ -52,12 +24,60 @@ function adicionarCarrinho() {
 
 /************************************************************** CALCULADORA PREÇOS **************************************************************/
 
+var preco = 320;
+var valorFinal = preco
+
 var resultadoQuantidade = document.getElementById('resultado-quantidade')
 
 function calcularCompra() {
   var quantidadeVinho = document.getElementById('quantidade-vinho').value;
   console.log(quantidadeVinho)
-  resultadoQuantidade.innerText = `Preço Total: R$${quantidadeVinho * 320},00`
+  ativador = null;
+
+  if (quantidadeVinho > 0) {
+    valorFinal = preco * quantidadeVinho;
+    console.log(preco)
+    resultadoQuantidade.innerText = `Preço Total: R$${valorFinal},00`
+  }
+  else {
+    resultadoQuantidade.innerText = ``
+  }
+}
+
+/************************************************************* VERIFICAÇÃO CUPOM *************************************************************/
+
+var resultadoCupom = document.getElementById('resultado-cupom');
+var ativador = null;
+
+function validarCupom() {
+  var cupom = document.getElementById('cupom').value;
+  var quantidadeVinho = document.getElementById('quantidade-vinho').value;
+  console.log(cupom);
+
+  if (quantidadeVinho > 0) {
+    if (cupom == 'FIAP2024') {
+      if (!ativador) {
+        resultadoCupom.innerText = 'Cupom Válido'
+        resultadoCupom.className = "cupom-valido"
+        valorFinal = valorFinal - ((preco / 100) * 10)
+        console.log(preco)
+        resultadoQuantidade.innerText = `Preço Total: R$${valorFinal},00`
+        ativador = 1;
+      }
+      else {
+        resultadoCupom.innerText = 'Esse cupom ja esta sendo usado!'
+        resultadoCupom.className = "cupom-invalido"
+      }
+    }
+    else {
+      resultadoCupom.innerText = 'Cupom Inválido'
+      resultadoCupom.className = "cupom-invalido"
+    }
+  } 
+  else{
+    resultadoCupom.innerText = 'Adicione um quantidade valida!'
+    resultadoCupom.className = "cupom-invalido"
+  }
 }
 
 /************************************************************** FORMULARIO CONTATO **************************************************************/
@@ -65,3 +85,16 @@ function calcularCompra() {
 function enviaFormularioContato() {
   alert("Mensagem enviada com sucesso!")
 }
+
+/************************************************************** SUGESTAO **************************************************************/
+
+const btnSugestao = document.querySelectorAll('.btnSugestao')
+
+btnSugestao.forEach((botao) => {
+  botao.addEventListener('click' , () => {
+    let parente = botao.parentNode
+    parente.parentNode.classList.toggle("sugestao-card-item-overflow")
+  })
+})
+
+
